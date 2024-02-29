@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "compile": "yarn workspaces foreach -A -v run compile",
-    "build": "yarn workspaces foreach -A -v run build"
+    "build": "node init && yarn workspaces foreach -A -v run build"
   },
   "workspaces": [
     "react",

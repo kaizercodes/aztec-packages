@@ -8,8 +8,8 @@
     "codegen": "${AZTEC_CLI:-aztec-cli} codegen src/contracts/target -o artifacts --ts",
     "clean": "rm -rf ./dest .tsbuildinfo ./artifacts ./src/contracts/target",
     "prep": "yarn clean && yarn compile && yarn codegen && tsc -b",
-    "dev": "yarn prep && webpack serve --mode development",
-    "build": "yarn prep && webpack",
+    "dev": "node init && yarn prep && webpack serve --mode development",
+    "build": "node init && yarn prep && webpack",
     "test": "echo \"Frontend test soon!\"",
     "formatting": "prettier --check ./src && eslint ./src",
     "formatting:fix": "prettier -w ./src"

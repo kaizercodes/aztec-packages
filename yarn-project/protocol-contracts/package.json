@@ -18,10 +18,10 @@
     "tsconfig": "./tsconfig.json"
   },
   "scripts": {
-    "build": "yarn clean && yarn build:copy-contracts && tsc -b",
-    "build:copy-contracts": "./scripts/copy-contracts.sh",
-    "build:dev": "tsc -b --watch",
-    "build:ts": "tsc -b",
+    "build": "node init && yarn clean && yarn build:copy-contracts && tsc -b",
+    "build:copy-contracts": "node init && ./scripts/copy-contracts.sh",
+    "build:dev": "node init && tsc -b --watch",
+    "build:ts": "node init && tsc -b",
     "clean": "rm -rf ./dest .tsbuildinfo ./src/artifacts",
     "formatting": "run -T prettier --check ./src && run -T eslint ./src",
     "formatting:fix": "run -T eslint --fix ./src && run -T prettier -w ./src",
