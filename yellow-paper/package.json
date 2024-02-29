@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "yarn preprocess && docusaurus start --host 0.0.0.0",
-    "start:dev": "yarn preprocess && docusaurus start --host 0.0.0.0",
-    "build": "docusaurus build",
+    "start": "node init && yarn preprocess && docusaurus start --host 0.0.0.0",
+    "start:dev": "node init && yarn preprocess && docusaurus start --host 0.0.0.0",
+    "build": "node init && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
