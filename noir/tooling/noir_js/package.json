@@ -35,8 +35,8 @@
   },
   "types": "lib/index.d.ts",
   "scripts": {
-    "dev": "tsc-multi --watch",
-    "build": "tsc-multi",
+    "dev": "node init && tsc-multi --watch",
+    "build": "node init && tsc-multi",
     "test": "yarn test:compile_program && yarn test:node:esm && yarn test:node:cjs",
     "test:compile_program": "./scripts/compile_test_programs.sh",
     "test:node:esm": "mocha --timeout 25000 --exit --config ./.mocharc.json",
@@ -45,7 +45,7 @@
     "prettier:fix": "prettier --write 'src/**/*.ts' 'test/**/*.ts'",
     "lint": "NODE_NO_WARNINGS=1 eslint . --ext .ts --ignore-path ./.eslintignore  --max-warnings 0",
     "nightly:version": "jq --arg new_version \"-$(git rev-parse --short HEAD)$1\" '.version = .version + $new_version' package.json > package-tmp.json && mv package-tmp.json package.json",
-    "publish": "echo 📡 publishing `$npm_package_name` && yarn npm publish",
+    "publish": "echo \ud83d\udce1 publishing `$npm_package_name` && yarn npm publish",
     "clean": "rm -rf ./lib"
   },
   "devDependencies": {

@@ -27,10 +27,10 @@
     "tsconfig": "./tsconfig.json"
   },
   "scripts": {
-    "build": "yarn clean && tsc -b && webpack",
-    "build:web": "webpack",
-    "build:dev": "tsc -b --watch",
-    "build:ts": "tsc -b",
+    "build": "node init && yarn clean && tsc -b && webpack",
+    "build:web": "node init && webpack",
+    "build:dev": "node init && tsc -b --watch",
+    "build:ts": "node init && tsc -b",
     "clean": "rm -rf ./dest .tsbuildinfo ./src/account_contract/artifacts",
     "formatting": "run -T prettier --check ./src && run -T eslint ./src",
     "formatting:fix": "run -T eslint --fix ./src && run -T prettier -w ./src",

@@ -23,11 +23,11 @@
   "module": "lib/esm/types.js",
   "types": "lib/esm/types.d.ts",
   "scripts": {
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module CommonJS --outDir lib/cjs",
-    "build": "yarn run build:cjs && yarn run build:esm",
+    "build:esm": "node init && tsc",
+    "build:cjs": "node init && tsc --module CommonJS --outDir lib/cjs",
+    "build": "node init && yarn run build:cjs && yarn run build:esm",
     "nightly:version": "jq --arg new_version \"-$(git rev-parse --short HEAD)$1\" '.version = .version + $new_version' package.json > package-tmp.json && mv package-tmp.json package.json",
-    "publish": "echo 📡 publishing `$npm_package_name` && yarn npm publish",
+    "publish": "echo \ud83d\udce1 publishing `$npm_package_name` && yarn npm publish",
     "lint": "NODE_NO_WARNINGS=1 eslint . --ext .ts --ignore-path ./.eslintignore  --max-warnings 0",
     "clean": "rm -rf ./lib"
   },
