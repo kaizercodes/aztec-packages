@@ -8,7 +8,7 @@
     "./types": "./dest/types/index.js"
   },
   "scripts": {
-    "build": "yarn clean && yarn noir:build",
+    "build": "node init && yarn clean && yarn noir:build",
     "clean": "rm -rf ./dest src/target",
     "noir:build": "cd src && ../../../noir/target/release/nargo compile --silence-warnings",
     "noir:format": "cd src && ../../../noir/target/release/nargo fmt",

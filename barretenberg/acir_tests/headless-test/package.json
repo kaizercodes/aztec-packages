@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "ts-node-esm ./src/index.ts"
+    "start": "node init && ts-node-esm ./src/index.ts"
   },
   "dependencies": {
     "chalk": "^5.3.0",
